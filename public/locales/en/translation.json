@@ -1,0 +1,27 @@
+{
+  "navbar":{
+  "home":"Home",
+  "about":"About",
+  "contact":"Contact",
+  "services":"Services"
+},
+  "Header": {
+    "welcome": "Welcome to our website",
+    "about": "About Us",
+    "contact": "Contact",
+    "banner": "test English Languch by shosho "
+  },
+  "body": {
+    "title": "test Languch",
+    "description": "any text here"
+      },
+        "mainHome": {
+    "header": "hhfhfhgfgfh",
+    "title": " hjghjghjfghdffd",
+    "body": {
+      "b1": "fgfddigjfdbnffdnhbf bfdggb niifes isondgfh",
+      "b2": "منذ البداية، كانت مهمتنا واضحة أن نكون مساهمين بارزين في قطاع الخدمات العامة في المملكة العربية السعودية، متميزين بالتزامنا بالتميز والنزاهة",
+      "b3": "لقد شاركت مجموعة شركاتنا بنجاح في مشاريع مرموقة وكبيرة في جميع أنحاء المملكة، وكان تفانينا في تعزيز شراكات قوية مع عملائنا حجر الزاوية في نجاحنا ، نحن لسنا مجرد مزودي خدمات بل نسعى لأن نكون شريكًا موثوقًا يضمن أعلى معايير الرضا من خلال إتمام المشاريع في الوقت المحدد وجودة الخدمة التي لا مثيل لها ."
+    }
+  }
+}

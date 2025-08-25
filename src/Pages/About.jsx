@@ -1,0 +1,96 @@
+import React from "react";
+import { useTranslation } from "react-i18next";
+import { t } from "i18next";
+import toast, { Toaster } from "react-hot-toast";
+
+const About = () => {
+  const [result, setResult] = React.useState("");
+  const { i18n } = useTranslation();
+  const toggleLang = () => {
+    i18n.changeLanguage(i18n.language === "en" ? "ar" : "en");
+  };
+  const onSubmit = async (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(event.target);
+
+    formData.append("access_key", "c338b9ba-864b-404d-8ef5-1e40ef802c13");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        toast.success("Your Message Sent successfully, Thanks");
+        event.target.reset();
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+  };
+
+  return (
+    <>
+      <div>{t("Header.about")}</div>
+      <div className="flex flex-col  items-center gap-5 justify-center">
+        <h1 className="text-3xl text-pink-800 font-mono tracking-wide ">
+          Welcome shimaa
+        </h1>
+
+        <form
+          onSubmit={onSubmit}
+          className="flex flex-col w-1/2 items-center gap-3 justify-center border border-gray-200 bg-slate-100 rounded"
+        >
+          <div className="grid grid-cols-2 w-full p-4 gap-4 justify-between ">
+            <div className="name ">
+              <h2>Enter your Name</h2>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="your name pleass"
+                className="w-full outline-none p-2 border border-gray-100 rounded"
+              />
+            </div>
+            <div className="email ">
+              <h2>Enter your Email</h2>
+              <input
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your Email"
+                className="w-full outline-none p-2 border border-gray-100 rounded"
+              />
+            </div>
+          </div>
+          <div className="textarea w-full p-4">
+            <h2>Enter your Message</h2>
+            <textarea
+              name="message"
+                required
+              rows={8}
+              placeholder="Your Message "
+              className="border border-gray-100 rounded w-full p-2 outline-none"
+            />
+          </div>
+          <button
+            type="submit"
+            className=" bg-pink-800 font-mono text-white px-5 py-2 rounded mb-3 cursor-pointer hover:bg-pink-900"
+          >
+            {" "}
+            Submit
+          </button>
+        </form>
+        <span>{result}</span>
+      </div>
+    </>
+  );
+};
+
+export default About;

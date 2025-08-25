@@ -1,0 +1,16 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  text-align: start;
+}
+
+[dir="rtl"] {
+  direction: rtl;
+  text-align: right;
+}
+.arabic-font {
+  font-family: 'Tahoma', 'Arial', sans-serif;
+  font-size: 1.1em;
+}
